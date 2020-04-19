@@ -12,7 +12,7 @@ public class PreConditionPage {
 
     // Using page factory FindBy method to find all the elements in pre-condition page
 
-    @FindBy(id = "uc-btn-accept-banner")
+    @FindBy(xpath = "//*[@id='uc-btn-accept-banner']")
     private static WebElement acceptCookiesBtn;
 
     @FindBy(xpath = "//button[@value='keepingCar']")
