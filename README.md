@@ -23,8 +23,8 @@ This service is using maven as a build tool.
 
 <ul>
   <li>Full Sales funnel flow until DOB using Manual Vehicle selection</li>
-  <li>Full Sales funnel flow until DOB using HSN/TS</li>
-  <li>Covered Negative testcases - Date Validations</li>
+  <li>Full Sales funnel flow until DOB using HSN/TSN</li>
+  <li>Covered Negative testcases as part of the sales funnel flow tests- Date Validations</li>
   <li>Vehicle selection using Vehicle Brand search</li>
 </ul>
 
