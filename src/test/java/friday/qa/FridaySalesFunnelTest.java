@@ -54,6 +54,7 @@ public class FridaySalesFunnelTest extends TestBase {
         preConditionTest.fillPreConditionsTest(driver);
         registeredOwnerTest.fillRegisteredOwnerTest(driver);
         selectVehicleTest.selectUsingCarBrandSearchTest(driver, carData.getBrand());
+        vehicleModelTest.selectCarModelTest(driver, carData.getModel());
     }
 
     @Test(dataProvider = "car-hsn-tsn-data", dataProviderClass = CarTestDataProvider.class)

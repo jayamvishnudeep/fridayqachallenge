@@ -13,7 +13,6 @@ public class RegisteredOwnerTest {
 
         vehicleRegisteredOwnerPage = new VehicleRegisteredOwnerPage(driver);
 
-        vehicleRegisteredOwnerPage.verifyRegisteredOwnerPage();
         vehicleRegisteredOwnerPage.clickOnCarOwnerNoBtn();
         vehicleRegisteredOwnerPage.clickOnCarOwnerYesBtn();
         vehicleRegisteredOwnerPage.clickOnUsedCarBtn();

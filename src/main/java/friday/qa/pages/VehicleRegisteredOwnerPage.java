@@ -63,11 +63,4 @@ public class VehicleRegisteredOwnerPage {
         submitBtn.click();
     }
 
-    public void verifyRegisteredOwnerPage() {
-        try {
-            new WebDriverWait(driver, 10).until(ExpectedConditions.urlToBe(EXPECTED_URL));
-        } catch (TimeoutException ex) {
-            Assert.fail("Unable to reach " + EXPECTED_URL);
-        }
-    }
 }

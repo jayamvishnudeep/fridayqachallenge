@@ -56,6 +56,7 @@ public class PreConditionPage {
             new WebDriverWait(driver, 2).until(arg0 -> {
                 try {
                     if (acceptCookiesBtn.isDisplayed()) {
+                        acceptCookiesBtn.click();
                         return true;
                     } else {
                         return false;
@@ -64,7 +65,6 @@ public class PreConditionPage {
                     return false;
                 }
             });
-            acceptCookiesBtn.click();
         } catch (TimeoutException ex) {
             // Cookies Accept popup box does not appeared
             // I am running tests in Incognito mode and so Cookies alert popup must be displayed every time,
