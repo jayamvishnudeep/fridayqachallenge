@@ -21,7 +21,7 @@ public class TestBase {
     public TestBase() {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream("/Users/vishnudeep.jayam/Projects/Learning/fridayInsurance/src/main/java/friday/qa/config/config.properties");
+            FileInputStream ip = new FileInputStream("src/main/java/friday/qa/config/config.properties");
             prop.load(ip);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -38,6 +38,9 @@ public class TestBase {
             System.setProperty("webdriver.chrome.driver", prop.getProperty("chromedriverPath"));
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
+            options.addArguments("-- headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
             driver = new ChromeDriver(options);
         } else if (browserName.equals("firefox")) {
             System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxdriverPath"));
