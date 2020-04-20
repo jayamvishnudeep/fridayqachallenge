@@ -21,7 +21,7 @@ public class TestBase {
     public TestBase() {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream("/Users/vishnudeep.jayam/Projects/Learning/fridayInsurance/src/main/java/friday/qa/config/config.properties");
+            FileInputStream ip = new FileInputStream("src/main/java/friday/qa/config/config.properties");
             prop.load(ip);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
