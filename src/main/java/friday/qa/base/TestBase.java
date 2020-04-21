@@ -1,16 +1,16 @@
 package friday.qa.base;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import friday.qa.data.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
@@ -31,7 +31,7 @@ public class TestBase {
     }
 
 
-    public  void initialization() {
+    public void initialization() {
         String browserName = prop.getProperty("browserName");
 
         if (browserName.equals("chrome")) {

@@ -2,9 +2,9 @@ package friday.qa;
 
 import friday.qa.base.TestBase;
 import friday.qa.data.testData.CarDetails;
+import friday.qa.data.testData.CarTestDataProvider;
 import friday.qa.libraries.TakeScreenshot;
 import friday.qa.testcases.*;
-import friday.qa.data.testData.CarTestDataProvider;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

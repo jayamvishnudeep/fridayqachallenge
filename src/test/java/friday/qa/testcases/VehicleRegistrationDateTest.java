@@ -1,8 +1,7 @@
 package friday.qa.testcases;
 
-import org.openqa.selenium.WebDriver;
-
 import friday.qa.pages.VehicleRegistrationDatePage;
+import org.openqa.selenium.WebDriver;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

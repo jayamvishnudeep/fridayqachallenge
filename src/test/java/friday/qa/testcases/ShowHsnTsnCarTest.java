@@ -15,6 +15,5 @@ public class ShowHsnTsnCarTest {
         showHsnTsnCarPage.verifyShowHsnTsnPage();
         showHsnTsnCarPage.verifyHsnTsnVehicleDetails();
         showHsnTsnCarPage.clickOnShowHsnTsnConfirmationBtn();
-
     }
 }

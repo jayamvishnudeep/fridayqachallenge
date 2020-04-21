@@ -57,6 +57,7 @@ public class VehicleRegistrationDatePage {
     public void verifyFirstRegistrationDateErrorInfo() {
         Assert.assertTrue(dateValidationMessage.isDisplayed());
     }
+
     public void clearRegistrationDate() {
         registrationDate.clear();
     }

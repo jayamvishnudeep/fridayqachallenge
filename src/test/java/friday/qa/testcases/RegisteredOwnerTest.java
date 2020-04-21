@@ -1,6 +1,5 @@
 package friday.qa.testcases;
 
-import friday.qa.base.TestBase;
 import friday.qa.pages.VehicleRegisteredOwnerPage;
 import org.openqa.selenium.WebDriver;
 

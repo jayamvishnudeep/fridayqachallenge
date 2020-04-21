@@ -24,7 +24,7 @@ public class SelectVehicleTest {
 
     public void selectUsingHsnTsnTest(WebDriver driver, String hsn, String tsn) {
 
-        selectVehiclePage = new SelectVehiclePage(driver, hsn, tsn, "04.2019" );
+        selectVehiclePage = new SelectVehiclePage(driver, hsn, tsn, "04.2019");
 
         selectVehiclePage.verifySelectVehiclePage();
         selectVehiclePage.clickOnHsnTsnBtnBtn();
