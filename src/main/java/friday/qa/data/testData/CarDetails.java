@@ -1,4 +1,4 @@
-package friday.qa.data;
+package friday.qa.data.testData;
 
 public class CarDetails {
 

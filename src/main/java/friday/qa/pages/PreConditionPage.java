@@ -30,9 +30,6 @@ public class PreConditionPage {
     @FindBy(xpath = "//input[@name='inceptionDate']")
     private static WebElement inceptionDate;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div/div[2]/div/div/form/div[2]/div[2]/div[2]")
-    private static WebElement dateValidation;
-
     @FindBy(xpath = "//button[@type='submit']")
     private static WebElement submitBtn;
 
@@ -53,7 +50,7 @@ public class PreConditionPage {
 
     public void clickOnAcceptCookiesBtn() {
         try {
-            new WebDriverWait(driver, 2).until(arg0 -> {
+            new WebDriverWait(driver, 7).until(arg0 -> {
                 try {
                     if (acceptCookiesBtn.isDisplayed()) {
                         acceptCookiesBtn.click();

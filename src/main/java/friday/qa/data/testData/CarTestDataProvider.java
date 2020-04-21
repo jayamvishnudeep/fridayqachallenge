@@ -1,4 +1,4 @@
-package friday.qa.data;
+package friday.qa.data.testData;
 
 import org.testng.annotations.DataProvider;
 
