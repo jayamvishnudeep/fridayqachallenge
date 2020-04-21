@@ -1,9 +1,11 @@
 package friday.qa;
 
 import friday.qa.base.TestBase;
-import friday.qa.data.CarDetails;
+import friday.qa.data.testData.CarDetails;
+import friday.qa.libraries.TakeScreenshot;
 import friday.qa.testcases.*;
-import friday.qa.data.CarTestDataProvider;
+import friday.qa.data.testData.CarTestDataProvider;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -67,7 +69,11 @@ public class FridaySalesFunnelTest extends TestBase {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            TakeScreenshot.captureScreenshot(driver, result.getName());
+        }
+
         driver.quit();
     }
 }
