@@ -4,7 +4,9 @@ import friday.qa.data.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,19 +33,40 @@ public class TestBase {
     }
 
 
-    public void initialization() {
+    public void initialization() throws Exception {
         String browserName = prop.getProperty("browserName");
 
-        if (browserName.equals("chrome")) {
+        //Check if parameter passed as 'chrome'
+
+        if (browserName.equals("Chrome")) {
             System.setProperty("webdriver.chrome.driver", prop.getProperty("chromedriverPath"));
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             driver = new ChromeDriver(options);
-        } else if (browserName.equals("firefox")) {
+        }
+
+        //Check if parameter passed as 'firefox'
+
+        else if (browserName.equalsIgnoreCase("Firefox")) {
             System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxdriverPath"));
             driver = new FirefoxDriver();
         }
 
+        //Check if parameter passed as 'Safari'
+
+        else if (browserName.equalsIgnoreCase("Safari")) {
+            driver = new SafariDriver();
+        }
+
+        //Check if parameter passed as 'Edge'
+
+        else if (browserName.equalsIgnoreCase("Edge")) {
+            System.setProperty("webdriver.edge.driver", prop.getProperty("edgedriverPath"));
+            driver = new EdgeDriver();
+        } else {
+
+            throw new Exception("Browser is not correct");
+        }
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -52,5 +75,5 @@ public class TestBase {
 
         driver.get(prop.getProperty("url"));
     }
-
 }
+
