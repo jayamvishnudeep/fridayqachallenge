@@ -29,7 +29,7 @@ public class FridaySalesFunnelTest extends TestBase {
     }
 
     @BeforeMethod
-    public void init() {
+    public void init() throws Exception {
         initialization();
     }
 

@@ -1,6 +1,8 @@
 package friday.qa.base;
 
 import friday.qa.data.TestUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,6 +20,7 @@ public class TestBase {
 
     public WebDriver driver;
     public static Properties prop;
+    public static Logger logger = LogManager.getLogger("TestBase");
 
 
     public TestBase() {
@@ -43,6 +46,8 @@ public class TestBase {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             driver = new ChromeDriver(options);
+            logger.info("Chrome Launched !!!");
+
         }
 
         //Check if parameter passed as 'firefox'
@@ -50,12 +55,16 @@ public class TestBase {
         else if (browserName.equalsIgnoreCase("Firefox")) {
             System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxdriverPath"));
             driver = new FirefoxDriver();
+            logger.info("Firefox Launched !!!");
+
         }
 
         //Check if parameter passed as 'Safari'
 
         else if (browserName.equalsIgnoreCase("Safari")) {
             driver = new SafariDriver();
+            logger.info("Safari Launched !!!");
+
         }
 
         //Check if parameter passed as 'Edge'
@@ -63,6 +72,8 @@ public class TestBase {
         else if (browserName.equalsIgnoreCase("Edge")) {
             System.setProperty("webdriver.edge.driver", prop.getProperty("edgedriverPath"));
             driver = new EdgeDriver();
+            logger.info("Edge Launched !!!");
+
         } else {
 
             throw new Exception("Browser is not correct");
@@ -74,6 +85,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
         driver.get(prop.getProperty("url"));
+        logger.info("Navigated to : " + prop.getProperty("url"));
     }
 }
 
